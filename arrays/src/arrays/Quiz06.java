@@ -1,0 +1,40 @@
+package arrays;
+
+import java.util.Scanner;
+
+public class Quiz06 {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("생성할 배열의 길이를 입력: ");
+		int a = s.nextInt();
+		int[] b = new int[a];
+		System.out.println(a+"개의 배열이 생성 ");
+		System.out.println("데이터를 입력하세요");
+		int i=0;
+		while(true) {
+			System.out.println(i+1 + "번째 데이터 입력: ");
+			b[i] = s.nextInt();
+			i++;
+			if(i==a) 
+				break;
+			}
+		System.out.print("배열 데이터: ");
+		for(i = 0; i < b.length; i++) {
+			System.out.print(b[i] + " ");
+		}
+		int  j, tmp;
+		for(i = 0; i < b.length-1; i++) {
+			for(j = i + 1; j < b.length; j++){
+				if(b[i] > b[j]){
+					tmp = b[i];
+					b[i] = b[j];
+					b[j] = tmp;
+				}
+			}
+		}
+		System.out.print("정렬 후 : " );
+			for(i = 0; i < b.length; i++) {
+				System.out.print(b[i] + " ");
+			}
+	}
+}

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane id="scrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="730.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myPage.MyPageController">
+   <content>
+      <BorderPane prefHeight="631.0" prefWidth="700.0" style="-fx-background-color: white;">
+         <top>
+            <VBox prefHeight="42.0" prefWidth="556.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="TOP_RIGHT" prefHeight="54.0" prefWidth="556.0" spacing="10.0">
+                     <children>
+                      <Label id="loginButton" fx:id="loginButton" onMouseClicked="#loginProc" prefHeight="15.0" prefWidth="59.0" text="로그인" />
+                        <Label fx:id="regButton" onMouseClicked="#regProc" text="회원가입" />
+                        <Label fx:id="mypageButton" onMouseClicked="#myPageProc" text="마이페이지" />
+                     </children>
+                     <padding>
+                        <Insets right="15.0" top="15.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <VBox prefHeight="634.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="66.0" prefWidth="700.0">
+                     <children>
+                        <HBox prefHeight="35.0" prefWidth="700.0">
+                           <children>
+                              <ImageView fx:id="logo" fitHeight="67.0" fitWidth="162.0" onMouseClicked="#mainProc" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resource/logo.png" />
+                                 </image>
+                              </ImageView>
+                              <HBox alignment="CENTER" prefHeight="43.0" prefWidth="527.0" spacing="20.0">
+                                 <children>
+                                    <VBox alignment="TOP_RIGHT" prefHeight="67.0" prefWidth="575.0">
+                                       <children>
+                                          <Label fx:id="noticeButton" onMouseClicked="#noticeProc" prefHeight="27.0" prefWidth="72.0" text="공지사항" />
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                             <children>
+                                                <TextField fx:id="searchField" prefHeight="29.0" prefWidth="236.0" />
+                                                <Button fx:id="searchButton" mnemonicParsing="false" onMouseClicked="#searchProc" text="찾기" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets right="15.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="519.0" prefWidth="700.0">
+                     <children>
+                        <HBox prefHeight="38.0" prefWidth="700.0">
+                           <children>
+                              <Label text="마이페이지" />
+                           </children>
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="46.0" prefWidth="700.0" spacing="300.0">
+                           <children>
+                              <Label fx:id="nameId" text="Label" />
+                              <Label onMouseClicked="#changeInfoProc" text="회원 정보 수정" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="구매내역" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="439.0" spacing="40.0">
+                                 <children>
+                                    <VBox alignment="CENTER" onMouseClicked="#purchaseAll" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label text="전체">
+                                             <font>
+                                                <Font size="28.0" />
+                                             </font></Label>
+                                          <Label fx:id="purchaseAll" text="Label" textFill="#dd2b2b">
+                                             <font>
+                                                <Font name="Bell MT" size="28.0" />
+                                             </font></Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="판매내역" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="439.0" spacing="40.0">
+                                 <children>
+                                    <VBox alignment="CENTER" onMouseClicked="#saleAll" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label text="전체">
+                                             <font>
+                                                <Font size="28.0" />
+                                             </font></Label>
+                                          <Label fx:id="saleAll" text="Label" textFill="#611616">
+                                             <font>
+                                                <Font name="Bell MT" size="28.0" />
+                                             </font></Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="145.0" prefWidth="700.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="장바구니" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <ListView prefHeight="145.0" prefWidth="408.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox prefHeight="41.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="35.0" prefWidth="700.0" spacing="15.0">
+                     <padding>
+                        <Insets left="20.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label text="회사소개" />
+                        <Label text="인재채용" />
+                        <Label text="제휴제안" />
+                        <Label text="이용약관" />
+                        <Label text="개인정보처리방침" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="35.0" prefWidth="700.0" spacing="15.0">
+                     <padding>
+                        <Insets left="20.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label text="EJO 주식회사 :" />
+                        <Label text="사업자 등록번호 : 000- 00- 00000" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+         <left>
+            <AnchorPane prefHeight="531.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <AnchorPane prefHeight="531.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </content>
+</ScrollPane>
